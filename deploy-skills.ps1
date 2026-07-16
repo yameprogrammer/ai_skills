@@ -35,10 +35,11 @@ Write-Host "1) Anthropic Official Skill Set (17 skills)"
 Write-Host "2) Superpowers Workflow & Discipline Set (14 skills)"
 Write-Host "3) ECC Performance Optimization Set (268 skills)"
 Write-Host "4) Claude Code Game Studios (CCGS) Template (49 agents and 73 skills structure)"
-Write-Host "5) All Individual Skills Combined (301 skills)"
+Write-Host "5) All Individual Skills Combined (302 skills)"
 Write-Host "6) Manual Selection (Comma-separated skill folder names)"
+Write-Host "7) Claude Code Video Toolkit (Remotion) Template (digitalsamba)"
 
-$choice = Read-Host "Choice (1-6)"
+$choice = Read-Host "Choice (1-7)"
 
 # Define destination subfolders
 $destSkillsPath = Join-Path $targetPath ".claude/skills"
@@ -84,7 +85,7 @@ switch ($choice) {
     "3" {
         Write-Host "Parsing skill list..."
         $allSkills = Get-ChildItem -Path "skills" -Directory | Select-Object -ExpandProperty Name
-        $eccSkills = $allSkills | Where-Object { $_ -notin $anthropicSkills -and $_ -notin $superpowersSkills -and $_ -ne 'clipify' -and $_ -ne 'video-use' }
+        $eccSkills = $allSkills | Where-Object { $_ -notin $anthropicSkills -and $_ -notin $superpowersSkills -and $_ -ne 'clipify' -and $_ -ne 'video-use' -and $_ -ne 'youtube-clipper' }
         $count = Copy-Skills -skillList $eccSkills
         Write-Host "`n[Success] ECC optimization skills ($count skills) deployed successfully!" -ForegroundColor Green
     }
@@ -138,6 +139,21 @@ switch ($choice) {
             $count = Copy-Skills -skillList $selectedSkills
             Write-Host "`n[Success] Selected skills ($count skills) deployed successfully!" -ForegroundColor Green
         }
+    }
+    "7" {
+        # Video Toolkit (digitalsamba) Template Copy
+        $srcVT = "templates/video-toolkit"
+        if (-not (Test-Path -Path $srcVT)) {
+            Write-Error "Video Toolkit template not found. Submodule sync is required."
+            exit
+        }
+        
+        Write-Host "Copying Video Toolkit template structure..." -ForegroundColor Yellow
+        
+        # Copy files excluding git repository files
+        Copy-Item -Path "$srcVT/*" -Destination $targetPath -Recurse -Force -Exclude ".git"
+        
+        Write-Host "`n[Success] Claude Code Video Toolkit template deployed successfully!" -ForegroundColor Green
     }
     Default {
         Write-Warning "Invalid choice."

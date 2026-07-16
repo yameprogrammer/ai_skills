@@ -1,3 +1,6 @@
 [submodule "templates/game-studios"]
 	path = templates/game-studios
 	url = https://github.com/Donchitos/Claude-Code-Game-Studios.git
+[submodule "templates/video-toolkit"]
+	path = templates/video-toolkit
+	url = https://github.com/digitalsamba/claude-code-video-toolkit.git

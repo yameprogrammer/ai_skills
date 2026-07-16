@@ -51,6 +51,7 @@
 * [skills/video-editing](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/video-editing): AI-assisted video editing workflows for cutting, structuring, and augmenting real footage. Covers the full pipeline from raw capture through FFmpeg, Remotion, ElevenLabs, fal.ai, and final polish in Descript or CapCut. Use when the user wants to edit video, cut footage, create vlogs, or build video content.
 * [skills/video-use](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/video-use): Edit any video by conversation. Transcribe, cut, color grade, generate overlay animations, burn subtitles — for talking heads, montages, tutorials, travel, interviews. No presets, no menus. Ask questions, confirm the plan, execute, iterate, persist. Production-correctness rules are hard; everything else is artistic freedom.
 * [skills/videodb](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/videodb): See, Understand, Act on video and audio. See- ingest from local files, URLs, RTSP/live feeds, or live record desktop; return realtime context and playable stream links. Understand- extract frames, build visual/semantic/temporal indexes, and search moments with timestamps and auto-clips. Act- transcode and normalize (codec, fps, resolution, aspect ratio), perform timeline edits (subtitles, text/image overlays, branding, audio overlays, dubbing, translation), generate media assets (image, audio, video), and create real time alerts for events from live streams or desktop capture.
+* [skills/youtube-clipper](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/youtube-clipper): >
 
 ### 🛠️ 개발 도구, 프레임워크 & API 연동 (Developer Tools, Frameworks & APIs)
 * [skills/agent-architecture-audit](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/agent-architecture-audit): Full-stack diagnostic for agent and LLM applications. Audits the 12-layer agent stack for wrapper regression, memory pollution, tool discipline failures, hidden repair loops, and rendering corruption. Produces severity-ranked findings with code-first fixes. Essential for developers building agent applications, autonomous loops, or any LLM-powered feature.
@@ -343,10 +344,16 @@
 * [skills/uncloud](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/uncloud): Use when managing an Uncloud cluster — deploying services, configuring Caddy ingress, adding static proxy routes for non-cluster devices, publishing ports, scaling, inspecting logs, or managing machines and volumes with the `uc` CLI.
 * [skills/windows-desktop-e2e](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/windows-desktop-e2e): E2E testing for Windows native desktop apps (WPF, WinForms, Win32/MFC, Qt) using pywinauto and Windows UI Automation.
 
-### 🎮 통합 게임 개발 스튜디오 템플릿 (Game Studios Submodule)
+### 🎮🎬 통합 스튜디오 개발/비디오 템플릿 (Game & Video Studios Submodules)
 * [templates/game-studios/](file:///C:/Users/parkp/Workspace/personal/ai_skills/templates/game-studios): **49개 에이전트 및 73개 게임 개발 전용 스킬이 포함된 통합 템플릿**
   - *역할*: 개별 스킬로 조각내어 쓰는 것보다, 신규 게임 프로젝트를 시작할 때 프로젝트 루트로 `.claude/` 설정을 통째로 복사해서 사용하기 적합합니다. (Unity, Unreal5, Godot 4 특화 에이전트 내장)
   - *출처*: `Donchitos/Claude-Code-Game-Studios` (Git Submodule 연동)
+  - *라이선스*: `MIT` 라이선스
+  - *동기화 방법*: 원격 저장소 업데이트 시 본 저장소 루트에서 `git submodule update --remote --merge` 실행
+
+* [templates/video-toolkit/](file:///C:/Users/parkp/Workspace/personal/ai_skills/templates/video-toolkit): **React 기반의 programmatic 비디오(Remotion) 동영상 제작 통합 템플릿**
+  - *역할*: React 코드로 모션 그래픽 영상을 렌더링하고, Playwright 화면 녹화 및 브랜드 테마를 싱크해 영상 프로젝트 수명 주기를 제어합니다. (유튜브 강좌, 제품 데모 제작 특화)
+  - *출처*: `digitalsamba/claude-code-video-toolkit` (Git Submodule 연동)
   - *라이선스*: `MIT` 라이선스
   - *동기화 방법*: 원격 저장소 업데이트 시 본 저장소 루트에서 `git submodule update --remote --merge` 실행
 
@@ -657,4 +664,6 @@
 | `writing-skills` | [skills/writing-skills](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/writing-skills) | Use when creating new skills, editing existing skills, or verifying skills work before deployment | Superpowers (obra) | MIT |
 | `x-api` | [skills/x-api](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/x-api) | X/Twitter API integration for posting tweets, threads, reading timelines, search, and analytics. Covers OAuth auth patterns, rate limits, and platform-native content posting. Use when the user wants to interact with X programmatically. | ECC (affaan-m) | MIT |
 | `xlsx` | [skills/xlsx](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/xlsx) | Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved. | Anthropic 공식 | Source-Available |
+| `youtube-clipper` | [skills/youtube-clipper](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/youtube-clipper) | > | op7418 | MIT |
 | `game-studios (template)` | [templates/game-studios](file:///C:/Users/parkp/Workspace/personal/ai_skills/templates/game-studios) | 49개 에이전트/73개 스킬 통합 게임 개발 스튜디오 템플릿 | Donchitos (submodule) | MIT |
+| `video-toolkit (template)` | [templates/video-toolkit](file:///C:/Users/parkp/Workspace/personal/ai_skills/templates/video-toolkit) | React 기반 코딩 비디오 제작(Remotion) 템플릿 | digitalsamba (submodule) | MIT |

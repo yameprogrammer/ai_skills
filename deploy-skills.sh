@@ -74,10 +74,11 @@ echo "1) Anthropic Official Skill Set (17 skills)"
 echo "2) Superpowers Workflow & Discipline Set (14 skills)"
 echo "3) ECC Performance Optimization Set (268 skills)"
 echo "4) Claude Code Game Studios (CCGS) Template (49 agents & 73 skills structure)"
-echo "5) All Individual Skills Combined (301 skills)"
+echo "5) All Individual Skills Combined (302 skills)"
 echo "6) Manual Selection (Comma-separated skill folder names)"
+echo "7) Claude Code Video Toolkit (Remotion) Template (digitalsamba)"
 
-read -p "Choice (1-6): " choice
+read -p "Choice (1-7): " choice
 
 case "$choice" in
     1)
@@ -93,8 +94,8 @@ case "$choice" in
         ecc_skills=()
         for dir in skills/*/; do
             dir_name=$(basename "$dir")
-            # clipify 및 video-use 제외
-            if [ "$dir_name" == "clipify" ] || [ "$dir_name" == "video-use" ]; then
+            # 제외 리스트 필터링
+            if [ "$dir_name" == "clipify" ] || [ "$dir_name" == "video-use" ] || [ "$dir_name" == "youtube-clipper" ]; then
                 continue
             fi
             in_anthropic=0
@@ -167,6 +168,17 @@ case "$choice" in
         done
         count=$(copy_skills trimmed_skills[@])
         echo -e "\n${GREEN}[Success] Selected skills (${count} skills) deployed successfully!${NC}"
+        ;;
+    7)
+        src_vt="templates/video-toolkit"
+        if [ ! -d "$src_vt" ]; then
+            echo -e "${RED}Error: Video Toolkit template not found. Submodule sync is required.${NC}"
+            exit 1
+        fi
+        echo -e "${YELLOW}Copying Video Toolkit template structure...${NC}"
+        # .git 제외하고 파일들 복사
+        cp -r "$src_vt"/* "$target_path/"
+        echo -e "\n${GREEN}[Success] Claude Code Video Toolkit template deployed successfully!${NC}"
         ;;
     *)
         echo -e "${RED}Invalid choice.${NC}"
