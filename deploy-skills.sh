@@ -74,7 +74,7 @@ echo "1) Anthropic Official Skill Set (17 skills)"
 echo "2) Superpowers Workflow & Discipline Set (14 skills)"
 echo "3) ECC Performance Optimization Set (268 skills)"
 echo "4) Claude Code Game Studios (CCGS) Template (49 agents & 73 skills structure)"
-echo "5) All Individual Skills Combined (305 skills)"
+echo "5) All Individual Skills Combined (306 skills)"
 echo "6) Manual Selection (Comma-separated skill folder names)"
 echo "7) Claude Code Video Toolkit (Remotion) Template (digitalsamba)"
 
@@ -94,8 +94,8 @@ case "$choice" in
         ecc_skills=()
         for dir in skills/*/; do
             dir_name=$(basename "$dir")
-            # 제외할 리스크 필터링
-            if [ "$dir_name" == "clipify" ] || [ "$dir_name" == "video-use" ] || [ "$dir_name" == "youtube-clipper" ] || [ "$dir_name" == "remotion-best-practices" ] || [ "$dir_name" == "video-copywriting" ] || [ "$dir_name" == "video-ui-ux-design" ]; then
+            # 제외할 리스트 필터링
+            if [ "$dir_name" == "clipify" ] || [ "$dir_name" == "video-use" ] || [ "$dir_name" == "youtube-clipper" ] || [ "$dir_name" == "remotion-best-practices" ] || [ "$dir_name" == "video-copywriting" ] || [ "$dir_name" == "video-ui-ux-design" ] || [ "$dir_name" == "video-producer" ]; then
                 continue
             fi
             in_anthropic=0
