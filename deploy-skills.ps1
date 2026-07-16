@@ -35,7 +35,7 @@ Write-Host "1) Anthropic Official Skill Set (17 skills)"
 Write-Host "2) Superpowers Workflow & Discipline Set (14 skills)"
 Write-Host "3) ECC Performance Optimization Set (268 skills)"
 Write-Host "4) Claude Code Game Studios (CCGS) Template (49 agents and 73 skills structure)"
-Write-Host "5) All Individual Skills Combined (300 skills)"
+Write-Host "5) All Individual Skills Combined (301 skills)"
 Write-Host "6) Manual Selection (Comma-separated skill folder names)"
 
 $choice = Read-Host "Choice (1-6)"
@@ -84,7 +84,7 @@ switch ($choice) {
     "3" {
         Write-Host "Parsing skill list..."
         $allSkills = Get-ChildItem -Path "skills" -Directory | Select-Object -ExpandProperty Name
-        $eccSkills = $allSkills | Where-Object { $_ -notin $anthropicSkills -and $_ -notin $superpowersSkills -and $_ -ne 'clipify' }
+        $eccSkills = $allSkills | Where-Object { $_ -notin $anthropicSkills -and $_ -notin $superpowersSkills -and $_ -ne 'clipify' -and $_ -ne 'video-use' }
         $count = Copy-Skills -skillList $eccSkills
         Write-Host "`n[Success] ECC optimization skills ($count skills) deployed successfully!" -ForegroundColor Green
     }
