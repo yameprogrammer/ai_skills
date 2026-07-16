@@ -28,7 +28,15 @@
 
 ## 🔍 전체 스킬 찾아보기 (Skills Directory)
 
-현재 저장소에 탑재되어 있는 299가지 개별 스킬 및 통합 템플릿의 용도, 분류, 출처 및 라이선스는 **[SKILLS_INDEX.md (스킬 색인 대장)](file:///C:/Users/parkp/Workspace/personal/ai_skills/SKILLS_INDEX.md)**에서 한눈에 확인하실 수 있습니다. 
+현재 저장소에 탑재되어 있는 301가지 개별 스킬 및 통합 템플릿의 용도, 분류, 출처 및 라이선스는 **[SKILLS_INDEX.md (스킬 색인 대장)](file:///C:/Users/parkp/Workspace/personal/ai_skills/SKILLS_INDEX.md)**에서 한눈에 확인하실 수 있습니다. 
+
+---
+
+## 📚 참조 지식 데이터베이스 (Reference Knowledge)
+
+AI 에이전트가 코딩 중 이미 개발된 훌륭한 라이브러리나 애드온을 검색하여 **"바퀴를 새로 발명하지 않도록"** 돕는 고품질의 참조용 지식 카탈로그 모음집입니다.
+
+* **[references/godot/awesome-godot.md](file:///C:/Users/parkp/Workspace/personal/ai_skills/references/godot/awesome-godot.md)**: Godot 엔진 커뮤니티가 선별한 최상급 오픈소스 플러그인, 프레임워크 및 애드온 링크 카탈로그 문서입니다. AI 에이전트에게 참조 지식으로 읽히면 중복 개발을 대폭 방지해 줍니다.
 
 ---
 
@@ -73,7 +81,10 @@
  ┣ 📄 README.md                (본 가이드 문서)
  ┣ 📄 SKILLS_INDEX.md          (스킬 색인 및 출처 정보 대장)
  ┣ 📄 deploy-skills.ps1        (자동 배포 파워셸 스크립트)
- ┣ 📂 skills/                  (실제 탑재되는 개별 스킬 폴더들 - 총 299개)
+ ┣ 📂 skills/                  (실제 탑재되는 개별 스킬 폴더들 - 총 301개)
+ ┣ 📂 references/              (AI 에이전트 참조용 기술 지식 DB)
+ ┃ ┗ 📂 godot/
+ ┃   ┗ 📄 awesome-godot.md     (Godot 고품질 오픈소스 플러그인 목록)
  ┣ 📂 templates/               (커스텀 스킬 작성을 위한 기본 템플릿)
  ┃ ┗ 📂 game-studios/          (Claude Code Game Studios 통합 서브모듈)
 ```
