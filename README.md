@@ -4,6 +4,28 @@
 
 ---
 
+## 🚀 스킬 배포 및 이식 방법 (Quick Deployer)
+
+본 저장소에 탑재된 수많은 개별 스킬과 템플릿들을 수동으로 분류해서 프로젝트에 복사할 필요 없이, 제공되는 **자동 배포 스크립트**를 실행하여 간편하게 이식할 수 있습니다.
+
+### 🛠️ 실행 방법 (Windows PowerShell)
+저장소 루트 디렉토리에서 아래 명령을 실행합니다.
+```powershell
+.\deploy-skills.ps1
+```
+
+### 💡 주요 기능
+* **스킬 배포 대상 설정**: 배포할 대상 프로젝트 경로를 입력하면 자동으로 해당 프로젝트 내 `.claude/` 구조를 만들어 줍니다.
+* **패키지 단위 이식**: 
+  1. **Anthropic 공식 스킬 세트** (17개)
+  2. **Superpowers 워크플로우 규율 세트** (14개)
+  3. **ECC 성능 최적화 스킬 세트** (268개)
+  4. **Claude Code Game Studios 템플릿** (49개 에이전트, 73개 스킬 전체)
+  5. **전체 개별 스킬 통합 배포**
+  6. **수동 선택 배포** (스킬명을 쉼표로 구분하여 입력)
+
+---
+
 ## 🔍 전체 스킬 찾아보기 (Skills Directory)
 
 현재 저장소에 탑재되어 있는 299가지 개별 스킬 및 통합 템플릿의 용도, 분류, 출처 및 라이선스는 **[SKILLS_INDEX.md (스킬 색인 대장)](file:///C:/Users/parkp/Workspace/personal/ai_skills/SKILLS_INDEX.md)**에서 한눈에 확인하실 수 있습니다. 
@@ -14,15 +36,10 @@
 
 게임 개발 프로젝트에 최적화된 49개 전문 역할군 에이전트와 73개 전용 스킬 뭉치인 `Donchitos/Claude-Code-Game-Studios` 레포지토리가 Git Submodule 형태로 **[templates/game-studios/](file:///C:/Users/parkp/Workspace/personal/ai_skills/templates/game-studios)** 경로에 탑재되어 있습니다.
 
-### 💡 활용 방법
-* **방법 A (추천)**: 신규 게임 개발 프로젝트를 시작할 때, `templates/game-studios/` 하위의 모든 설정 파일(`.claude/`, `design/`, `production/` 구조)을 신규 프로젝트 루트 디렉토리에 통째로 복사해 복제하여 사용합니다.
-* **방법 B**: `.claude/agents/` 내의 정교한 49개 게임 직무 에이전트 마크다운 프롬프트를 다른 멀티 에이전트 프레임워크(CrewAI, LangChain 등)의 시스템 메시지로 이식하여 사용합니다.
-
-### 🔄 원격 저장소 업데이트 동기화 방법
-해당 오픈소스 레포지토리가 업데이트되었을 때, 본 저장소 루트에서 아래 명령을 실행하면 최신 커밋 상태로 안전하게 동기화(Update)됩니다.
-```bash
-git submodule update --remote --merge
-```
+* **동기화 방법**: 원격 저장소 업데이트 시 본 저장소 루트에서 아래 명령을 실행하면 최신 커밋 상태로 안전하게 동기화(Update)됩니다.
+  ```bash
+  git submodule update --remote --merge
+  ```
 
 ---
 
@@ -55,6 +72,7 @@ git submodule update --remote --merge
 📂 ai_skills/ (Root)
  ┣ 📄 README.md                (본 가이드 문서)
  ┣ 📄 SKILLS_INDEX.md          (스킬 색인 및 출처 정보 대장)
+ ┣ 📄 deploy-skills.ps1        (자동 배포 파워셸 스크립트)
  ┣ 📂 skills/                  (실제 탑재되는 개별 스킬 폴더들 - 총 299개)
  ┣ 📂 templates/               (커스텀 스킬 작성을 위한 기본 템플릿)
  ┃ ┗ 📂 game-studios/          (Claude Code Game Studios 통합 서브모듈)
