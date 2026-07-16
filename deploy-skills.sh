@@ -74,7 +74,7 @@ echo "1) Anthropic Official Skill Set (17 skills)"
 echo "2) Superpowers Workflow & Discipline Set (14 skills)"
 echo "3) ECC Performance Optimization Set (268 skills)"
 echo "4) Claude Code Game Studios (CCGS) Template (49 agents & 73 skills structure)"
-echo "5) All Individual Skills Combined (299 skills)"
+echo "5) All Individual Skills Combined (300 skills)"
 echo "6) Manual Selection (Comma-separated skill folder names)"
 
 read -p "Choice (1-6): " choice
@@ -93,6 +93,10 @@ case "$choice" in
         ecc_skills=()
         for dir in skills/*/; do
             dir_name=$(basename "$dir")
+            # clipify 제외
+            if [ "$dir_name" == "clipify" ]; then
+                continue
+            fi
             in_anthropic=0
             for item in "${anthropic_skills[@]}"; do
                 if [ "$item" == "$dir_name" ]; then
