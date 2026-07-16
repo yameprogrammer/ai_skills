@@ -74,7 +74,7 @@ echo "1) Anthropic Official Skill Set (17 skills)"
 echo "2) Superpowers Workflow & Discipline Set (14 skills)"
 echo "3) ECC Performance Optimization Set (268 skills)"
 echo "4) Claude Code Game Studios (CCGS) Template (49 agents & 73 skills structure)"
-echo "5) All Individual Skills Combined (302 skills)"
+echo "5) All Individual Skills Combined (305 skills)"
 echo "6) Manual Selection (Comma-separated skill folder names)"
 echo "7) Claude Code Video Toolkit (Remotion) Template (digitalsamba)"
 
@@ -94,8 +94,8 @@ case "$choice" in
         ecc_skills=()
         for dir in skills/*/; do
             dir_name=$(basename "$dir")
-            # 제외 리스트 필터링
-            if [ "$dir_name" == "clipify" ] || [ "$dir_name" == "video-use" ] || [ "$dir_name" == "youtube-clipper" ]; then
+            # 제외할 리스크 필터링
+            if [ "$dir_name" == "clipify" ] || [ "$dir_name" == "video-use" ] || [ "$dir_name" == "youtube-clipper" ] || [ "$dir_name" == "remotion-best-practices" ] || [ "$dir_name" == "video-copywriting" ] || [ "$dir_name" == "video-ui-ux-design" ]; then
                 continue
             fi
             in_anthropic=0
@@ -176,7 +176,6 @@ case "$choice" in
             exit 1
         fi
         echo -e "${YELLOW}Copying Video Toolkit template structure...${NC}"
-        # .git 제외하고 파일들 복사
         cp -r "$src_vt"/* "$target_path/"
         echo -e "\n${GREEN}[Success] Claude Code Video Toolkit template deployed successfully!${NC}"
         ;;
