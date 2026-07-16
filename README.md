@@ -6,16 +6,32 @@
 
 ## 🔍 전체 스킬 찾아보기 (Skills Directory)
 
-현재 저장소에 탑재되어 있는 17가지 스킬의 용도, 분류, 출처 및 라이선스는 **[SKILLS_INDEX.md (스킬 색인 대장)](file:///C:/Users/parkp/Workspace/personal/ai_skills/SKILLS_INDEX.md)**에서 한눈에 확인하실 수 있습니다. 
+현재 저장소에 탑재되어 있는 299가지 개별 스킬 및 통합 템플릿의 용도, 분류, 출처 및 라이선스는 **[SKILLS_INDEX.md (스킬 색인 대장)](file:///C:/Users/parkp/Workspace/personal/ai_skills/SKILLS_INDEX.md)**에서 한눈에 확인하실 수 있습니다. 
+
+---
+
+## 🎮 통합 게임 개발 스튜디오 템플릿 (Game Studios Submodule)
+
+게임 개발 프로젝트에 최적화된 49개 전문 역할군 에이전트와 73개 전용 스킬 뭉치인 `Donchitos/Claude-Code-Game-Studios` 레포지토리가 Git Submodule 형태로 **[templates/game-studios/](file:///C:/Users/parkp/Workspace/personal/ai_skills/templates/game-studios)** 경로에 탑재되어 있습니다.
+
+### 💡 활용 방법
+* **방법 A (추천)**: 신규 게임 개발 프로젝트를 시작할 때, `templates/game-studios/` 하위의 모든 설정 파일(`.claude/`, `design/`, `production/` 구조)을 신규 프로젝트 루트 디렉토리에 통째로 복사해 복제하여 사용합니다.
+* **방법 B**: `.claude/agents/` 내의 정교한 49개 게임 직무 에이전트 마크다운 프롬프트를 다른 멀티 에이전트 프레임워크(CrewAI, LangChain 등)의 시스템 메시지로 이식하여 사용합니다.
+
+### 🔄 원격 저장소 업데이트 동기화 방법
+해당 오픈소스 레포지토리가 업데이트되었을 때, 본 저장소 루트에서 아래 명령을 실행하면 최신 커밋 상태로 안전하게 동기화(Update)됩니다.
+```bash
+git submodule update --remote --merge
+```
 
 ---
 
 ## ⚠️ 에이전트 및 AI 적용 전 필독 가이드 (Read Before Use)
 
-이 디렉토리에 수집되어 있는 스킬들은 다양한 출처(Anthropic 공식 스킬 등)에서 수집된 리소스입니다. 다른 AI 에이전트 환경이나 타사 LLM(OpenAI, Google 등)에 이 스킬들을 이식하여 탑재하기 전에 **반드시 아래 지침에 맞추어 적절한 튜닝과 환경 세팅을 진행해야 합니다.**
+이 디렉토리에 수집되어 있는 스킬들은 다양한 출처(Anthropic 공식, Superpowers, ECC 등)에서 수집된 리소스입니다. 다른 AI 에이전트 환경이나 타사 LLM(OpenAI, Google 등)에 이 스킬들을 이식하여 탑재하기 전에 **반드시 아래 지침에 맞추어 적절한 튜닝과 환경 세팅을 진행해야 합니다.**
 
 ### 1. 모델별 프롬프트 최적화 (Model-Specific Tuning)
-* **Claude 최적화 양식의 변환**: Anthropic의 공식 스킬들은 Claude 모델에 최적화되어 있어, 규칙 제어를 위해 XML 태그(`<guidelines>`, `<example>` 등)와 생각의 사슬(Chain of Thought) 기법을 적극 활용합니다.
+* **Claude 최적화 양식의 변환**: Anthropic 및 여러 공식 스킬들은 Claude 모델에 최적화되어 있어, 규칙 제어를 위해 XML 태그(`<guidelines>`, `<example>` 등)와 생각의 사슬(Chain of Thought) 기법을 적극 활용합니다.
 * **타사 LLM 적용 시**: GPT-4, Gemini 등 타사 LLM에 스킬을 적용할 때는 모델의 성향에 따라 XML 태그 형식을 일반 마크다운(Markdown)이나 JSON 형식의 지침으로 변경하고 핵심 규칙을 단순화할 것을 권장합니다.
 
 ### 2. 실행 환경 및 도구 의존성 세팅 (Tool & Dependency Setup)
@@ -39,11 +55,9 @@
 📂 ai_skills/ (Root)
  ┣ 📄 README.md                (본 가이드 문서)
  ┣ 📄 SKILLS_INDEX.md          (스킬 색인 및 출처 정보 대장)
- ┣ 📂 skills/                  (실제 탑재되는 개별 스킬 폴더들)
- ┃ ┣ 📂 docx/
- ┃ ┣ 📂 pdf/
- ┃ ┗ ... (총 17개 스킬)
- ┗ 📂 templates/               (커스텀 스킬 작성을 위한 기본 템플릿)
+ ┣ 📂 skills/                  (실제 탑재되는 개별 스킬 폴더들 - 총 299개)
+ ┣ 📂 templates/               (커스텀 스킬 작성을 위한 기본 템플릿)
+ ┃ ┗ 📂 game-studios/          (Claude Code Game Studios 통합 서브모듈)
 ```
 
 ---
