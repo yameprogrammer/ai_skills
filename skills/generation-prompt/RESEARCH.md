@@ -1,0 +1,126 @@
+# generation-prompt research
+
+- **v1:** 2026-07-16 — general still/motion craft  
+- **v1.1:** 2026-07-17 — Krea2 dialect  
+- **v1.2:** 2026-07-17 — full factory model matrix (tool_catalog CLIs)  
+- **v1.3:** 2026-08-15 — matrix covers all live `generate_*`; new dialects: Anima, Krea2 transform, camera_move, Wan Animate, MiniMax H3, music/SFX, Hy3D, style/viewpoint  
+- **v1.4:** 2026-08-15 — official still recipes (BFL Flux / Tongyi Z-Image / Juggernaut / Qwen Edit) + `scripts/prompt_dialect.py`
+
+**Scope:** Prompt dialects for agent_custom Comfy stack. Not every SaaS model.
+
+---
+
+## 1. Principles (all versions)
+
+1. Structure > fluff poetry  
+2. Front-load what the model weights  
+3. I2V ≠ second T2I  
+4. Banned fluff on photoreal paths  
+5. Quality gates block generate  
+6. **Per-model dialect** (v1.2) — one skill, many templates  
+
+---
+
+## 2. Factory inventory mapped (2026-08-15)
+
+Routing SSOT: `references/model_prompt_matrix.md` (every live `generate_*`).
+
+New in v1.3: `anima_2d.md` · `krea2_transform.md` · `camera_move.md` · `wan_animate.md` · `minimax_h3.md` · `music_audio.md` · `mesh_3d.md` · `style_viewpoint.md`
+
+---
+
+## 3. Source notes by family
+
+### 3.1 Krea2
+
+- Official prompting.md: natural language, long detailed best  
+- expansion.txt: faithfulness, one paragraph  
+- fal guide: materials, camera, Large≈photoreal  
+- Reddit: specificity, ~512 token caution, turbo+raw experiments  
+→ Skill: krea2_still_prompts.md  
+
+### 3.2 Z-Image Turbo (Moody)
+
+- HF Tongyi PROMPTING: long detailed; LLM enhance; token max caution  
+- Community: Turbo often **ignores negatives**  
+- Comfy docs: photoreal + optional PE  
+→ Skill: moody_zimage.md + still_image_prompts.md  
+
+### 3.3 Wan 2.2
+
+- InstaSD / wan27 / VEED / Segmind: Subject→Motion→Camera→Scene  
+- Camera language first-class; one move; continuous modifiers  
+- I2V: animate visible elements only  
+→ Skill: wan22_i2v.md  
+
+### 3.4 LTX 2.3
+
+- Comfy LTX-2.3: actions over time, visual details, audio  
+- Official I2V: image owns look; prompt = what next  
+- Prompt Relay: multi-event timed segments  
+→ Skill: ltx23_video.md  
+
+### 3.5 Qwen Image Edit
+
+- Reddit playbook: imperative; keep everything else; chain edits  
+- Text edits: preserve font/perspective  
+- Multi-ref: declare image roles  
+→ Skill: qwen_edit.md  
+
+### 3.6 Illustrious / NoobAI
+
+- Civitai / HF: Danbooru tags; masterpiece/best quality expected  
+- Composition: upper body / cowboy shot / full body — don’t conflict  
+- NL only lightly on Illustrious 2.0+  
+→ Skill: illustrious_tags.md (exception to global quality-tag ban)  
+
+### 3.8 Flux.1 / Flux.2 Klein (v1.4)
+
+- BFL Prompting Guide + Basics: NL, Subject→Action→Style→Context, front-load, quotes for text
+- FLUX.2: **no negatives**; 30–80w ideal; camera/film names; Klein **no upsampling**
+→ Skill: flux_still.md · CLI: prompt_dialect show flux1|flux_fill|flux2_klein
+
+### 3.9 SDXL Juggernaut / Pony (v1.4)
+
+- RunDiffusion: Natural language **or** tagging; Ragnarok accepts both
+- Pony: score_9 prefix (factory auto) — not Illustrious quality soup
+→ Skill: sdxl_still.md
+
+### 3.7 Ideogram 4
+
+- Official JSON captions; type text vs obj  
+- bbox 0–1000 yx order  
+- Factory lib/ideogram4_prompt.py encodes schema  
+→ Skill: ideogram4_typography.md  
+
+---
+
+## 4. Cross-model failure modes (observed + research)
+
+| Failure | Cause | Fix in skill |
+|---------|-------|--------------|
+| Dual person / poster faces | Wrong still dialect / NO-spam | Krea positive locks |
+| I2V identity melt + freeze | Still essay / no continuous | motion gates |
+| Edit drift | Mega multi-change Qwen | one-change + chain |
+| Bad on-image spelling | Free prose typography | Ideogram text elements |
+| Anime tags on photoreal | Dialect contamination | matrix + banned §6 |
+| Empty quality soup | Fluff only | banned_and_weak |
+
+---
+
+## 5. Out of scope
+
+- Midjourney flag encyclopedia  
+- Training LoRAs  
+- Non-factory SaaS APIs beyond Grok hybrid notes  
+
+---
+
+## 6. Maintenance
+
+When adding a new `generate_*` CLI:
+
+1. Add row to `model_prompt_matrix.md`  
+2. Add or extend a references/*.md dialect  
+3. Bump SKILL version + RESEARCH date  
+4. Sync to `.grok/skills/generation-prompt` and consumer project copies if used  
