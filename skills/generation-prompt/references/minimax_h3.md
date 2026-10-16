@@ -1,5 +1,7 @@
 # MiniMax H3 video+audio prompts
 
+MiniMax H3 일반 생성은 `F:/Agent_media_tools/scripts/generate_minimax_h3_optimized.py` 우선. T2V/I2V/FLF/R2V/V2V/AI2V 지원, 숏츠 `--aspect 9:16`. 기존 도구는 polish/carry/미지원 특수 입력에만 사용. 상세: `F:/Agent_media_tools/workflows/human/minimax_h3/H3_OPTIMIZED_GUIDE.md`.
+
 **CLI:** `generate_minimax_h3` (`--task t2v|i2v|r2v|flf|a2v|polish`)  
 **Not:** LTX/Wan I2V dialect, Krea still paragraphs, or a one-line tag soup.
 
@@ -22,6 +24,7 @@ non_diegetic_music: N/A
 - Speakers: `(S1)` / `(S2)`. Dialogue **only** inside `<d>[Korean] …</d>` (not `[한국어]`).
 - Talking-head / no score: `non_diegetic_music: N/A` (blank ≠ off).
 - Image owns look on I2V — do not re-essay face or wardrobe; say `preserve … from <Picture 1>`.
+- Single clip length: **Recommended maximum 8.0s** (24fps @ 768p, ~192 frames). Duration > 8.0s emits CLI warning; use `--carry-from` or multi-shot sequencing for longer sequences.
 
 ### Alignment line (first line + blank line, then the three fields)
 
@@ -133,5 +136,6 @@ No creative prompt.
 - [ ] Contact sheet: Picture 1 identity/body, Picture 2 outfit only; "still, not a video"; three named panels
 - [ ] One camera move; holds use positive lock language
 - [ ] Dialogue in `<d>[Korean] …</d>` with a named speaker
+- [ ] Single clip duration within recommended **8.0s** (~192 frames @ 24fps 768p)
 - [ ] `non_diegetic_music: N/A` when no score
 - [ ] Not a Krea still paragraph
