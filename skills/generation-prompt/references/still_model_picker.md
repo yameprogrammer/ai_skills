@@ -15,6 +15,7 @@ Do **not** write one prompt and spray it across models.
 | Flux 추종 / 짧은 글자 | `generate_flux` | `flux1` | NL 30–80w; no negatives |
 | 마스크 인페 (실사) | `generate_flux_fill` | `flux_fill` | hole contents only |
 | Klein 빠른 T2I/I2I | `generate_flux2_klein` | `flux2_klein` | NL; I2I = one change |
+| FLUX3 T2I / reference edit / layout | `generate_flux3` | Read [flux3_still.md](flux3_still.md) directly; no registered prompt_dialect id | Full scene caption + quoted literal text; not the FLUX.2 recipe |
 | SDXL / Lightning 스카우트 | `generate_sdxl` | `sdxl` | short NL or Pony scores |
 | 문장 편집 | `generate_qwen_edit` | `qwen_edit` | one imperative + keep rest |
 | 화면 글자 히어로 | `generate_ideogram4` | `ideogram` | `--text` / exactly reading |
