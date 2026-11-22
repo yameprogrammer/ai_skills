@@ -9,6 +9,22 @@ description: >
   Bans tag-soup on photoreal paths and wardrobe re-essay on motion. Slash: /generation-prompt
 ---
 
+<!-- IMAGE-TOOL-PRIORITY-20261018 -->
+## 이미지 도구 선택 — 최신 사용자 지침 (2026-10-18)
+
+기본 도구 선택 기준이다. 프로젝트별로 사용자가 도구를 따로 지정하면 그 지정을 우선한다.
+
+- **이미지 안에 글자가 포함되면 보좌관 이미지 생성 도구를 사용한다.** 로컬 모델의 글자 표현 한계를 고려한 선택이다. 생성 후 실제 이미지를 열어 철자·문구·누락·가독성을 검수한다.
+- **글자 없는 이미지는 로컬 FLUX3 또는 Krea2를 사용한다.** FLUX3는 full-caption, Krea2는 해당 모델의 자연어 프롬프트 규칙을 따른다.
+- 이번 지침은 이전 **“텍스트가 있으면 Flow 또는 보좌관 이미지 도구”**보다 최신이며 이미지 선택 시 우선 적용한다. **Flow 전면 금지를 뜻하지 않는다.**
+- 정확한 자막·타이틀·광고 문구는 기존대로 Remotion/Blender 등의 별도 텍스트 소스·레이어로 후반 합성할 수 있다. 글자 없는 배경·원화 생성은 위 로컬 모델을 사용한다.
+- 적용 범위는 이미지 생성 도구 선택이다. **영상·TTS·Blender·Remotion 도구 선택과 기존 편집 워크플로우는 변경하지 않는다.**
+
+[Still picker](references/still_model_picker.md). 아래 방언·Typography 설명은 기술 참고이며 위 선택 지침을 대체하지 않는다.
+
+<!-- /IMAGE-TOOL-PRIORITY-20261018 -->
+
+
 # generation-prompt — Image & video prompt craft (factory)
 
 You turn **direction** into **model-readable English** (or tags/JSON when that model requires it).  

@@ -6,7 +6,7 @@ Applies only to `generate_flux3.py`. FLUX.1/Fill/FLUX.2 remain in [flux_still.md
 
 - Distilled INT8 loader: `flux3/flux3_image_klein_sd_int8_convrot.safetensors`; `CLIPLoader` type `flux3`, `qwen3vl_4b_int8_convrot.safetensors`; `flux2-vae.safetensors`. These are local loader filenames, not a claim that the current public download uses the same spelling.
 - Default 16 steps, CFG 1, euler/simple. No prompt-upsample node: the caller supplies the expanded caption through `-p` or UTF-8 `--prompt-file`. No dedicated `--text`, `--negative` or upsampler CLI option exists here.
-- Modes: `t2i`, `single_edit`, `multi_reference`, `character_consistency`, `style_consistency`, `box_layout`. Strict style QC is still experimental.
+- Modes: `t2i`, `single_edit`, `multi_reference`, `character_consistency`, `style_consistency`, `box_layout`. Read [usage and measured limits](F:/Agent_media_tools/workflows/human/flux3/AGENT_GUIDE.md); strict style QC is still experimental.
 
 ## Official guidance and sources (checked 2026-10-18)
 
