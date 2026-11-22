@@ -46,6 +46,8 @@
 
 * [skills/video-direction](skills/video-direction/SKILL.md): Local factory v1.13.0. Music-led direction with actual-audio evidence, frame timing and source lineage; PC-HOME latest-blend handoff. SSOT F:/Agent_media_tools/skills/video-direction.
 * [skills/video-edit](skills/video-edit/SKILL.md): Local factory v1.9.0. EDIT_PLAN and QC, with PC-HOME Remotion → Blender VSE → exact user-saved blend authority and project execution boundaries.
+* [skills/hyperframes-motion-reference](skills/hyperframes-motion-reference/SKILL.md): HyperFrames 숏폼 실험과 웹 UI 모션 참고. 기존 Remotion·Blender의 대체재로 자동 적용하지 않음.
+* [Awesome AI Motion](references/video/awesome-ai-motion.md): Motion reference gallery for playlist intros and Shorts; no installation.
 
 
 * [skills/yue2-cover](skills/yue2-cover/SKILL.md): YuE2 staged music cover smoke; generated singing by default, optional reference SVC. CLI and guide in F:/Agent_media_tools.
@@ -512,6 +514,7 @@
 | `git-workflow` | [skills/git-workflow](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/git-workflow) | Git workflow patterns including branching strategies, commit conventions, merge vs rebase, conflict resolution, and collaborative development best practices for teams of all sizes. | ECC (affaan-m) | MIT |
 | `github-ops` | [skills/github-ops](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/github-ops) | GitHub repository operations, automation, and management. Issue triage, PR management, CI/CD operations, release management, and security monitoring using the gh CLI. Use when the user wants to manage GitHub issues, PRs, CI status, releases, contributors, stale items, or any GitHub operational task beyond simple git commands. | ECC (affaan-m) | MIT |
 | `open-game-skills-review` | [SKILL.md](skills/open-game-skills-review/SKILL.md) | 전투 감각, 이동, 카메라, 타깃 및 플레이 검증 | [jammyfu/open-game-skills](https://github.com/jammyfu/open-game-skills) | MIT |
+| `hyperframes-motion-reference` | [SKILL.md](skills/hyperframes-motion-reference/SKILL.md) | HTML 모션 영상 파일럿 및 UI 전환 참고. | 로컬 작성; HeyGen·Emil Kowalski·DesignBookmark 원문 링크 | 로컬; 외부 코드·에셋 미포함 |
 | `godot-code-gen` | [skills/godot-code-gen](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/godot-code-gen) | 설명이 없습니다. | alexmeckes | MIT |
 | `godot-interactive` | [skills/godot-interactive](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/godot-interactive) | Persistent `godot-mcp` and AI Bridge workflows for Godot 4.x projects. Use this skill for `.tscn`, `.gd`, `.gdshader`, `.tres`, and live editor tasks that need scene inspection, iterative node edits, refresh/run/test loops, runtime diagnostics, or hybrid file-plus-editor validation. | alexmeckes | MIT |
 | `godot-live-edit` | [skills/godot-live-edit](file:///C:/Users/parkp/Workspace/personal/ai_skills/skills/godot-live-edit) | 설명이 없습니다. | alexmeckes | MIT |
