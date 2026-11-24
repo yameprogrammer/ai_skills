@@ -4,3 +4,6 @@
 [submodule "templates/video-toolkit"]
 	path = templates/video-toolkit
 	url = https://github.com/digitalsamba/claude-code-video-toolkit.git
+[submodule "cutaway"]
+	path = cutaway
+	url = https://github.com/Nyxera0x/cutaway.git
