@@ -1,0 +1,7 @@
+node_modules/
+*.mp4
+*.gif
+*.wav
+sheet*.png
+.DS_Store
+!examples/demo/teaser.gif

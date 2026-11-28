@@ -1,0 +1,8 @@
+node_modules/
+.venv/
+fonts/
+build/
+output/
+*.mp4
+*.wav
+__pycache__/

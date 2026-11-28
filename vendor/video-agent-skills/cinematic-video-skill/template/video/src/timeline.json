@@ -1,0 +1,13 @@
+{
+  "fps": 30,
+  "bpm": 120,
+  "scenes": [
+    {"id": "cold",   "dur": 10, "level": 0, "hud": false},
+    {"id": "title",  "dur": 8,  "level": 0, "hud": false, "impact": true},
+    {"id": "act1",   "dur": 4,  "level": 1, "card": true, "year": 2015.8},
+    {"id": "split1", "dur": 12, "level": 1, "year": 2016.0},
+    {"id": "grid1",  "dur": 14, "level": 3, "year": 2020.0},
+    {"id": "hero1",  "dur": 12, "level": 5, "year": 2024.0},
+    {"id": "outro",  "dur": 12, "level": 8, "hud": false, "impact": true}
+  ]
+}
