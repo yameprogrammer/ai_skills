@@ -713,3 +713,8 @@
 | `game-studios (template)` | [templates/game-studios](file:///C:/Users/parkp/Workspace/personal/ai_skills/templates/game-studios) | 49개 에이전트/73개 스킬 통합 게임 개발 스튜디오 템플릿 | Donchitos (submodule) | MIT |
 | `video-toolkit (template)` | [templates/video-toolkit](file:///C:/Users/parkp/Workspace/personal/ai_skills/templates/video-toolkit) | React 기반 코딩 비디오 제작(Remotion) 템플릿 | digitalsamba (submodule) | MIT |
 | `yue2-cover` | [skills/yue2-cover](skills/yue2-cover/SKILL.md) | Short music covers via SheetSage2/YuE2; optional Seed-VC singing reference; staged recovery and review. | Local factory (Agent_media_tools) | local |
+
+## Game development skill pack (reference only)
+
+- [awesome-gamedev-agent-skills v2.0.0](vendor/awesome-gamedev-agent-skills/README.md): 79 selectable skills and one router. Upstream: [gamedev-skills/awesome-gamedev-agent-skills](https://github.com/gamedev-skills/awesome-gamedev-agent-skills/tree/v2.0.0), commit `2ee85183666929223cc8b1bdb53da5e7d3fb4804`, Apache-2.0 ([LICENSE](vendor/awesome-gamedev-agent-skills/LICENSE), [NOTICE](vendor/awesome-gamedev-agent-skills/NOTICE)).
+- Archived unchanged outside the deployable `skills/` directory. Review and copy only the required skill folder and its bundled resources into the chosen project; nothing from this snapshot is installed automatically.
